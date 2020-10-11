@@ -1,0 +1,9 @@
+_BASE_: "Base-Panoptic-FPNINDIV2-GALA-CBP10-test.yaml"
+MODEL:
+  WEIGHTS: "detectron2://ImageNetPretrained/MSRA/R-50.pkl"
+  RESNETS:
+    DEPTH: 50
+# SOLVER:
+#   OPTIM: "adam"
+#   WEIGHT_DECAY: 1e-4
+OUTPUT_DIR: "outputs/scratch_FPNINDIV2_GALA_CBP10_test"

@@ -1,0 +1,13 @@
+_BASE_: "Base-Panoptic-FPNINDI-EXPLPOST.yaml"
+MODEL:
+  WEIGHTS: "detectron2://ImageNetPretrained/MSRA/R-50.pkl"
+  RESNETS:
+    DEPTH: 50
+  FPN:
+    NORM: ""
+SOLVER:
+  STEPS: (200000, 250000)
+  MAX_ITER: 300000
+TEST:
+  EVAL_PERIOD: 0
+OUTPUT_DIR: "outputs/scratch_FPNINDI_EXPLPOSTv2"

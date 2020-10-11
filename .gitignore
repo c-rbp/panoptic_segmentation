@@ -1,0 +1,52 @@
+# output dir
+output
+instant_test_output
+inference_test_output
+checkpoints/
+visualizations/
+
+*.gif
+*.out
+*.jpg
+*.png
+*.txt
+*.out
+*.pdf
+BAK/
+fpngn1
+old_op/
+
+# compilation and distribution
+__pycache__
+_ext
+*.pyc
+*.so
+detectron2.egg-info/
+build/
+dist/
+wheels/
+
+# pytorch/python/numpy formats
+*.pth
+*.pkl
+*.npy
+
+# ipython/jupyter notebooks
+*.ipynb
+**/.ipynb_checkpoints/
+
+# Editor temporaries
+*.swn
+*.swo
+*.swp
+*~
+
+# Pycharm editor settings
+.idea
+
+# project dirs
+/detectron2/model_zoo/configs
+/datasets
+/models
+datasets/
+outputs/

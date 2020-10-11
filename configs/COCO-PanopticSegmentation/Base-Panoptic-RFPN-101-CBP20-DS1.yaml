@@ -1,0 +1,9 @@
+_BASE_: "../BASE-RCNN-RFPN-101-CBP20-DS1.yaml"
+MODEL:
+  META_ARCHITECTURE: "PanopticFPN"
+  MASK_ON: True
+  SEM_SEG_HEAD:
+    LOSS_WEIGHT: 0.5
+DATASETS:
+  TRAIN: ("coco_2017_train_panoptic_separated_reduce_1",)
+  TEST: ("coco_2017_val_panoptic_separated",)

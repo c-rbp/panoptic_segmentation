@@ -1,0 +1,14 @@
+_BASE_: "Base-Panoptic-RFPN-CBP100-TAU999.yaml"
+MODEL:
+  WEIGHTS: "detectron2://ImageNetPretrained/MSRA/R-50.pkl"
+  RESNETS:
+    DEPTH: 50
+# SOLVER:
+  # PRETRAINED_LR_SCALE: 0.1
+  # ADDED_WEIGHT_KEYS:
+  #   - 'horizontal'
+  #   - 'topdown'
+  # OPTIM: "adam"
+  # WEIGHT_DECAY: 1e-4
+OUTPUT_DIR: "outputs/RFPN_cbp100_tau999-test"
+

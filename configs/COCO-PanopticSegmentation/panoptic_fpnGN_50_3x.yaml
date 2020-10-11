@@ -1,0 +1,15 @@
+_BASE_: "Base-Panoptic-FPNGN.yaml"
+MODEL:
+  WEIGHTS: "detectron2://ImageNetPretrained/MSRA/R-50.pkl"
+  RESNETS:
+    DEPTH: 50
+    NORM: "FrozenBN"
+  FPN:
+    NORM: ""
+SOLVER:
+  STEPS: (210000, 250000)
+  MAX_ITER: 370000
+  OPTIM: "sgd"
+TEST:
+  EVAL_PERIOD: 0
+OUTPUT_DIR: "outputs/scratch_FPNGN_init0sgdtest"

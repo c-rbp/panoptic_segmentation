@@ -1,0 +1,8 @@
+_BASE_: "Base-Panoptic-FPNINDIV2-NOSKIP.yaml"
+MODEL:
+  WEIGHTS: "detectron2://ImageNetPretrained/MSRA/R-50.pkl"
+  RESNETS:
+    DEPTH: 50
+  FPN:
+    NORM: ""
+OUTPUT_DIR: "outputs/scratch_FPNINDIV2_NOSKIP_CBP10"

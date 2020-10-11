@@ -1,0 +1,9 @@
+_BASE_: "Base-Panoptic-LATERAL-CBP10.yaml"
+MODEL:
+  WEIGHTS: "detectron2://ImageNetPretrained/MSRA/R-50.pkl"
+  RESNETS:
+    DEPTH: 50
+SOLVER:
+  OPTIM: "adam"
+  WEIGHT_DECAY: 1e-8
+OUTPUT_DIR: "outputs/LATERAL_CBP10_ADAM"

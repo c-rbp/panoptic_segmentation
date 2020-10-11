@@ -1,0 +1,11 @@
+_BASE_: "Base-Panoptic-FPN-GN.yaml"
+MODEL:
+  WEIGHTS: "detectron2://ImageNetPretrained/MSRA/R-50.pkl"
+  RESNETS:
+    DEPTH: 50
+SOLVER:
+  STEPS: (168000, 200000)
+  MAX_ITER: 216000
+TEST:
+  EVAL_PERIOD: 0
+OUTPUT_DIR: "outputs/scratch_FPNGN_GALA"

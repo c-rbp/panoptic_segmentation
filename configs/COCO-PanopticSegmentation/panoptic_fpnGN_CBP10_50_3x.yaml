@@ -1,0 +1,14 @@
+_BASE_: "Base-Panoptic-FPNGN-CBP10.yaml"
+MODEL:
+  WEIGHTS: "detectron2://ImageNetPretrained/MSRA/R-50.pkl"
+  RESNETS:
+    DEPTH: 50
+  FPN:
+    NORM: "GN"
+SOLVER:
+  STEPS: (210000, 250000)
+  MAX_ITER: 270000
+TEST:
+  EVAL_PERIOD: 0
+OUTPUT_DIR: "outputs/scratch_FPNGN_CBP10"
+CUDNN_BENCHMARK: False

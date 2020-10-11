@@ -1,0 +1,10 @@
+_BASE_: "Base-Panoptic-FPN-GNBNLow-GALA-CBP10_50_1x.yaml"
+MODEL:
+  WEIGHTS: "detectron2://ImageNetPretrained/MSRA/R-50.pkl"
+  BACKBONE:
+    FREEZE_AT: 1
+  RESNETS:
+    DEPTH: 50
+# SOLVER:
+#   OPTIM: "adam"
+OUTPUT_DIR: "outputs/scratch_FPN_GN_Low_GALA_CBP10"

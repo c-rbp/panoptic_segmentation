@@ -1,0 +1,6 @@
+_BASE_: "Base-Panoptic-FPN-HR.yaml"
+MODEL:
+  WEIGHTS: "detectron2://ImageNetPretrained/MSRA/R-50.pkl"
+  RESNETS:
+    DEPTH: 50
+OUTPUT_DIR: "outputs/scratch-RN50-1x-baseline-hr-test"
