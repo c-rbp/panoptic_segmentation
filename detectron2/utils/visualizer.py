@@ -344,9 +344,28 @@ class Visualizer:
             masks = None
 
         if self._instance_mode == ColorMode.SEGMENTATION and self.metadata.get("thing_colors"):
-            colors = [
-                self._jitter([x / 255 for x in self.metadata.thing_colors[c]]) for c in classes
-            ]
+            try:
+                if True:
+                    # colors = []
+                    # for k in category_ids:
+                    #     colors.append(np.array(self.metadata.thing_colors[k]) / 255.)
+                    rand_colors = det_random_color(rgb=True, maximum=1, repeats=10000)
+                    uni_categories = np.unique(category_ids)
+                    colors = []
+                    for ca in uni_categories:
+                        ca_idx = category_ids == ca
+                        ca_idx_sum = ca_idx.sum()
+                        if ca_idx_sum > 1:
+                            cycle_by = 100
+                            for cc in range(ca_idx_sum):
+                                colors.append(rand_colors[ca + cycle_by])
+                                cycle_by += 100
+                        else:
+                            colors.append(rand_colors[ca])
+                else:
+                    colors = [random_color(rgb=True, maximum=1) for k in category_ids]
+            except AttributeError:
+                colors = None
             alpha = 0.8
         else:
             colors = None
